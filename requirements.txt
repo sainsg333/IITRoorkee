@@ -2,7 +2,7 @@ pygame
 numpy
 requests
 huggingface_hub
-gunicorn --workers=1 --threads=1 app:app
+gunicorn --workers=1 --threads=1
 flask
 opencv-python
 ultralytics
