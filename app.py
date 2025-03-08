@@ -7,7 +7,7 @@ import requests
 import time
 import os
 from huggingface_hub import hf_hub_download
-
+port=7000
 app = Flask(__name__)
 import requests
 
@@ -177,4 +177,4 @@ def notifier():
             time.sleep(1)  # Polling interval
     return Response(stream_with_context(event_stream()), content_type='text/event-stream')
 if __name__ == '__main__':
-    app.run(port=7000, debug=True)
+    app.run(port=port, debug=True)
