@@ -10,6 +10,8 @@ from huggingface_hub import hf_hub_download
 port=7000
 app = Flask(__name__)
 import requests
+from ultralytics import settings
+settings.update({"cache": False, "device": "cpu"})  # Reduce memory
 
 
 # Authenticate and download model
