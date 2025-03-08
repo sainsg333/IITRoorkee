@@ -1,0 +1,4 @@
+pygame
+numpy
+requests
+huggingface_hub
