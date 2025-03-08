@@ -3,3 +3,5 @@ numpy
 requests
 huggingface_hub
 gunicorn
+flask
+opencv-python
