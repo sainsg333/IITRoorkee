@@ -87,7 +87,7 @@ def generate_frames():
         if not ret:
             break
 
-        results = model(frame, conf=0.5)
+        results = model(frame, conf=0.5, save=False, save_txt=False, save_conf=False, verbose=False)
         bot_detected = False
         bot_outside_roi = False  # Reset for each frame
 
