@@ -12,6 +12,8 @@ app = Flask(__name__)
 import requests
 from ultralytics import settings
 settings.update({"cache": False, "device": "cpu"})  # Reduce memory
+import os
+os.environ["ULTRALYTICS_CONFIG_DIR"] = "/tmp/.ultralytics"
 
 
 # Authenticate and download model
