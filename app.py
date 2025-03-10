@@ -7,14 +7,10 @@ import requests
 import time
 import os
 from huggingface_hub import hf_hub_download
-port=7000
 app = Flask(__name__)
-import requests
-from ultralytics import settings
-settings.update({"cache": False, "device": "cpu"})  # Reduce memory
+import requests # Reduce memory
 import os
 os.environ["ULTRALYTICS_CONFIG_DIR"] = "/tmp/.ultralytics"
-
 
 # Authenticate and download model
 hf_token = "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"
@@ -181,4 +177,5 @@ def notifier():
             time.sleep(1)  # Polling interval
     return Response(stream_with_context(event_stream()), content_type='text/event-stream')
 if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
     app.run(port=port, debug=True)
